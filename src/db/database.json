@@ -1,0 +1,40 @@
+{
+    "tutor": [
+        {
+            "name": "Surender",
+            "age": "24",
+            "pic":"suri.png",
+            "rating":4.5,
+            "price":"$20",
+            "reviews":300
+        },
+        {
+            "name": "Vinita",
+            "age": "24",
+            "pic":"suri.png",
+            "rating":2.5,
+            "price":"$21",
+            "reviews":200
+        }
+    ],
+    "subject": [
+        {
+            "title": "English",
+            "id": "1"
+        },
+        {
+            "title": "Maths",
+            "id": "2"
+        }
+    ],
+    "place": [
+        {
+            "title": "Starbucks",
+            "id": "1"
+        },
+        {
+            "title": "CCD",
+            "id": "2"
+        }
+    ]
+}
