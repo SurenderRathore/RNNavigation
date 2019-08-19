@@ -13,6 +13,7 @@ import ReactNativePicker from 'react-native-picker-module'
 import TutorItemCell from './cells/TutorItemCell.js'
 import LocationPicker from './Components/LocationPicker'
 import PlacePicker from './Components/PlacePicker'
+import PlaceModel from './Components/PlaceModel'
 
 export default class DetailScreen extends Component {
 
@@ -24,8 +25,8 @@ export default class DetailScreen extends Component {
         data: [],
         subjects:[],
         places:[],
-        selectedPlace:null,
-        selectedSubject:null,
+        selectedPlace:"Choose Place",
+        selectedSubject:"Choose Subject",
         showPicker: false
     }
 
@@ -119,8 +120,10 @@ export default class DetailScreen extends Component {
             <View style={styles.container}>
                 <View style={styles.topViewContainer}>
                     <LocationPicker style={styles.locationPicker} 
-                    onClickHandler = {this._choosePlace}/>
+                    onClickHandler = {this._choosePlace}
+                    title={this.state.selectedPlace}/>
                     <PlacePicker style={styles.placePicker} 
+                    title={this.state.selectedSubject}
                     values = {this.state.subjects.map(item => item.title)}
                     onConfirm = {(value, index) => {
                             console.log("value: ", value)
@@ -144,7 +147,18 @@ export default class DetailScreen extends Component {
                             })
                         }}
                     />
-                    <View>
+                    <PlaceModel 
+                        visible = {this.state.showPicker}
+                        onClose = {(value)=>{
+                            console.log("Selected Value",value);
+                            
+                            this.setState({
+                                showPicker:false,
+                                selectedPlace: value ? value.title : this.state.selectedPlace
+                            })
+                        }}
+                    />
+                    {/* <View>
                         <Modal
                         animationType = "slide"
                         transparent = {true}
@@ -157,7 +171,7 @@ export default class DetailScreen extends Component {
                         </View>    
                         
                         </Modal>
-                    </View>
+                    </View> */}
                 </View>
 
                 <View style={styles.tableContainer}>

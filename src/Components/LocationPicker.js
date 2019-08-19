@@ -7,7 +7,7 @@ export default class LocationPicker extends Component {
       <View style={[styles.root, this.props.style]}>
         <View style={styles.locationBg} />
         <TouchableOpacity onPress={this.props.onClickHandler} style={styles.locationButton}>
-            <Text style={styles.location}>Starbucks</Text>
+            <Text style={styles.location}>{this.props.title}</Text>
             <Text style={styles.locationOnMaterial}></Text>
         </TouchableOpacity>
       </View>

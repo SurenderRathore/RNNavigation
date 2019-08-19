@@ -30,11 +30,13 @@
     "place": [
         {
             "title": "Starbucks",
+            "address":"20 Pablo Road",
             "id": "1"
         },
         {
             "title": "CCD",
-            "id": "2"
+            "id": "2",
+            "address":"Bannerghatta Road"
         }
     ]
 }

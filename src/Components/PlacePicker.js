@@ -14,7 +14,7 @@ export default class PlacePicker extends Component {
             <View style={[styles.root, this.props.style]}>
                 <View style={styles.locationBg} />
                 <TouchableOpacity onPress={this._chooseSubject} style={styles.locationButton}>
-                    <Text style={styles.location}> Maths </Text>
+                    <Text style={styles.location}> {this.props.title} </Text>
                     <Text style={styles.locationOnMaterial}></Text>
                 </TouchableOpacity>
 
